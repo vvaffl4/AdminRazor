@@ -1,0 +1,14 @@
+﻿@page
+@model CreateModel
+@{
+	ViewData["Title"] = "Create user";
+}
+
+<h1>
+	@ViewData["Title"]
+</h1>
+<form method="post">
+	<input asp-for="User.UserName" />
+	<input asp-for="User.Password" />
+	<input type="submit" value="Confirm" />
+</form>

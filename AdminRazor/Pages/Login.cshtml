@@ -3,8 +3,20 @@
 @{
 }
 
+<h1>@ViewData["Title"]</h1>
+
+@if (!string.IsNullOrEmpty(ViewData["ErrorMessages"] as string))
+{
+	<p>@ViewData["ErrorMessages"]</p>
+}
 <form method="post">
-	<input asp-for="login.UserName" />
-	<input asp-for="login.Password" />
-	<input type="submit" value="Login"/>
+	<div>
+		<input asp-for="login.UserName" />
+	</div>
+	<div>
+		<input asp-for="login.Password" />
+	</div>
+	<div>
+		<input type="submit" value="Login"/>
+	</div>
 </form>

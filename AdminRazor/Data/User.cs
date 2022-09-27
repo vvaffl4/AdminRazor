@@ -1,14 +1,15 @@
 ﻿using RazorAdmin.Data;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace RazorAdmin.Data
 {
 	public class User
 	{
-		[Required(ErrorMessage = "This field is required")]
-		[RegularExpression("^[a-zA-Z0-9_.-]*$", ErrorMessage = "Usernames can only contain letters, numbers and _")]
+		[Required(ErrorMessage = "A username is required")]
+		[RegularExpression("^[a-zA-Z0-9_]*$", ErrorMessage = "Usernames can only contain letters, numbers and _")]
 		public string UserName { get; set; }
-		[Required(ErrorMessage = "This field is required")]
+		[Required(ErrorMessage = "A password is required")]
 		[MinLength(12, ErrorMessage = "Your password must be longer than 11 characters.")]
 		[MaxLength(128, ErrorMessage = "Your password can't be longer than 128 characters.")]
 		public string Password { get; set; }
@@ -16,6 +17,7 @@ namespace RazorAdmin.Data
 
 	public static class Example
 	{
+		// Example User data to show in this example (instead of Database data)
 		public static IEnumerable<User> Users = new User[]
 		{
 			new User{ UserName = "Admin", Password = "Admin!" },
