@@ -1,0 +1,11 @@
+﻿table tbody tr {
+	border-top: 1px solid black;
+}
+
+table tbody tr:nth-child(2n+1) {
+	background-color: darkgrey;
+}
+
+table tbody tr:nth-child(2n) {
+	background-color: lightgrey;
+}

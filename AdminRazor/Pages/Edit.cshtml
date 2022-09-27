@@ -1,0 +1,10 @@
+﻿@page "{username}"
+@model EditModel
+@{
+}
+
+<form method="post">
+	<input asp-for="User.UserName" />
+	<input asp-for="User.Password" />
+	<input type="submit" value="Confirm" />
+</form>

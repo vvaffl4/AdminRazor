@@ -1,0 +1,32 @@
+﻿@page
+@model AccountsModel
+@{
+}
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+	<p>@Model.Message</p>
+}
+<table>
+	<thead>
+		<tr>
+			<th>Username</th>
+			<th>Password</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var user in Model.Users)
+		{
+			<tr>
+				<td>@user.UserName</td>
+				<td>@user.Password</td>
+				<td>
+					<a asp-page="View" asp-route-username="@user.UserName">View</a>
+					<a asp-page="Edit" asp-route-username="@user.UserName">Edit</a>
+					<a asp-page-handler="Delete" asp-route-username="@user.UserName">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
