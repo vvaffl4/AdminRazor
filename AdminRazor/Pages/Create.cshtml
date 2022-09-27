@@ -7,6 +7,10 @@
 <h1>
 	@ViewData["Title"]
 </h1>
+@if (!string.IsNullOrEmpty(ViewData["ErrorMessages"] as string))
+{
+	<p>@ViewData["ErrorMessages"]</p>
+}
 <form method="post">
 	<input asp-for="User.UserName" />
 	<input asp-for="User.Password" />
